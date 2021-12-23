@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Que déguster aujourd'hui ?
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-select 
+    [value]="defaultCategory" 
+    cancelText="Annuler"
+    (ionChange)="onChange($event)"
+  >
+    <ion-select-option 
+      *ngFor="let category of categories">{{ category }}</ion-select-option>
+  </ion-select>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col [routerLink]="'/meal/' + meal.idMeal" *ngFor="let meal of meals" size="6">
+        <ion-img [src]="meal.strMealThumb"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  
+
+</ion-content>

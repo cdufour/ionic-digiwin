@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "gourmandise",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

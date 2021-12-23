@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Geolocation
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <h1 class="gps">GPS</h1>
+
+  <ion-item *ngIf="position">
+    Lat: {{ position.coords.latitude }} <br>
+    Lng: {{ position.coords.longitude }}
+  </ion-item>
+
+  <demo-event 
+    title="Simple titre"
+    [numbers]="[12,36,99.90]"
+    (onNotify)="onNotify($event)"
+  ></demo-event>
+  
+  <demo-event 
+    title="Autre titre"
+    [numbers]="numbers"
+    (onNotify)="onNotify($event)"
+  ></demo-event>
+
+  <ion-item>{{ notification }}</ion-item>
+  
+</ion-content>
